@@ -43,7 +43,7 @@
             cursor: pointer
         }
 
-        .labels {
+        .labels font-weight-bold  {
             font-size: 11px
         }
 
@@ -65,65 +65,117 @@
                         width="150px"
                         src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
                         class="font-weight-bold">Edogaru</span><span
-                        class="text-black-50">edogaru@mail.com.my</span><span>
+                        class="text-black-50" id="url"></span><span>
                     </span></div>
             </div>
-            <div class="col-md-5 border-right">
+            <div class="col-md-9 border-right">
                 <div class="p-3 py-5">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Profile Settings</h4>
                     </div>
                     <div class="row mt-2">
-                        <div class="col-md-6"><label class="labels">Name</label>
-                            <h2>Deepak</h2>    
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Name</label>
+                            <h2>{{data.fname}}</h2>
                         </div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text"
-                                class="form-control" value="" placeholder="surname"></div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold  ">Surname</label>
+                            <h2>{{data.lname}}</h2>
+                        </div>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text"
-                                class="form-control" placeholder="enter phone number" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text"
-                                class="form-control" placeholder="enter address line 1" value=""></div>
-                        <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text"
-                                class="form-control" placeholder="enter address line 2" value=""></div>
-                        <div class="col-md-12"><label class="labels">Postcode</label><input type="text"
-                                class="form-control" placeholder="enter address line 2" value=""></div>
-                        <div class="col-md-12"><label class="labels">State</label><input type="text"
-                                class="form-control" placeholder="enter address line 2" value=""></div>
-                        <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control"
-                                placeholder="enter address line 2" value=""></div>
-                        <div class="col-md-12"><label class="labels">Email ID</label><input type="text"
-                                class="form-control" placeholder="enter email id" value=""></div>
-                        <div class="col-md-12"><label class="labels">Education</label><input type="text"
-                                class="form-control" placeholder="education" value=""></div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Country</label><input type="text"
-                                class="form-control" placeholder="country" value=""></div>
-                        <div class="col-md-6"><label class="labels">State/Region</label><input type="text"
-                                class="form-control" value="" placeholder="state"></div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Mobile Number</label>
+                            <p class="fw-medium bs-secondary-bg">{{data.mobile}}</p>
+                        </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Mobile Number 2</label>
+                            <p class="fw-medium bg-body-secondary">{{data.mobile_nd}}</p>
+                        </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 1</label>
+                            <p class="fw-medium bg-body-secondary">{{data.address}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 2</label>
+                            <p class="fw-medium bg-body-secondary">{{data.address_nd}}</p>
+                            </div>
+                        
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Father Name</label>
+                            <p class="fw-medium bg-body-secondary">{{data.fatherName}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold  font-weight-bold">Mother Name</label>
+                            <p class="fw-medium bg-body-secondary">{{data.motherName}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Aadhar</label>
+                            <p class="fw-medium bg-body-secondary">{{data.aadhar}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Postcode</label>
+                            <p class="fw-medium bg-body-secondary">{{data.pincode}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">State</label>
+                            <p class="fw-medium bg-body-secondary">{{data.state}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">City</label>
+                            <p class="fw-medium bg-body-secondary">{{data.city}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Gender</label>
+                            <p class="fw-medium bg-body-secondary">{{data.gender}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Date of Birth</label>
+                            <p class="fw-medium bg-body-secondary">{{data.dob}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Language</label>
+                            <p class="fw-medium bg-body-secondary">{{data.language}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Email</label>
+                            <p class="fw-medium bg-body-secondary">{{data.email}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Blood Group</label>
+                            <p class="fw-medium bg-body-secondary">{{data.bloodGroup}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Symptoms</label>
+                            <p class="fw-medium bg-body-secondary">{{data.symptoms}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Hobby</label>
+                            <p class="fw-medium bg-body-secondary">{{data.hobby}}</p>
+                            </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold ">Allergy</label>
+                            <p class="fw-medium bg-body-secondary">{{data.allergy}}</p>
+                            </div>
+                        <div class="col-md-12"><label class="labels font-weight-bold ">Past Medical Records</label>
+                            <p class="fw-medium bg-body-secondary">{{data.pastMediacalRec}}</p>
+                            </div>
+                        <div class="col-md-12"><label class="labels font-weight-bold ">Other</label>
+                            <p class="fw-medium bg-body-secondary">{{data.other}}</p>
+                            </div>
+                       
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="geturl()">Save
                             Profile</button></div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience"><span>Edit
-                            Experience</span><span class="border px-3 p-1 add-experience"><i
-                                class="fa fa-plus"></i>&nbsp;Experience</span></div><br>
-                    <div class="col-md-12"><label class="labels">Experience in Designing</label><input type="text"
-                            class="form-control" placeholder="experience" value=""></div> <br>
-                    <div class="col-md-12"><label class="labels">Additional Details</label><input type="text"
-                            class="form-control" placeholder="additional details" value=""></div>
                 </div>
             </div>
         </div>
     </div>
     </div>
     </div>
+<script>
+    const currentUrl = window.location.href;
+    document.getElementById('url').innerText= currentUrl;
+    function geturl(){
+        var textToCopy = document.getElementById('url').innerHTML;
 
+        // Create a new text area element to hold the text
+        var textArea = document.createElement("textarea");
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+
+        // Select the text inside the text area
+        textArea.select();
+
+        // Copy the selected text to the clipboard using the Clipboard API
+        document.execCommand("copy");
+
+        // Remove the temporary text area
+        document.body.removeChild(textArea);
+
+        // Alert the user that the text has been copied
+        alert("Text has been copied to the clipboard: " + textToCopy);
+    }
+</script>
 </body>
 
 </html>

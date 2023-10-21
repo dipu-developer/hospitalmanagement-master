@@ -676,8 +676,34 @@ def user_data_profile(request,pk):
     try:
         user=models.User.objects.get(username=pk)
         patient=models.Patient.objects.get(user_id=user.id)
+        
         data={
             'patient':user,
+            'fname':user.first_name,
+            'lname':user.last_name,
+            'mobile':patient.mobile,
+            'profile_pic':patient.profile_pic,
+            'aadhar':patient.aadhar,
+            'address_nd':patient.address_nd,
+            'address':patient.address,
+            'mobile_nd':patient.mobile_nd,
+            'email':patient.email,
+            'aadhar':patient.aadhar,
+            'state':patient.state,
+            'city':patient.city,
+            'pincode':patient.pincode,
+            'bloodGroup':patient.bloodGroup,
+            'dob':patient.dob,
+            'gender':patient.gender,
+            'language':patient.language,
+            'motherName':patient.motherName,
+            'fatherName':patient.fatherName,
+            'symptoms':patient.symptoms,
+            'other':patient.other,
+            'hobby':patient.hobby,
+            'allergy':patient.allergy,
+            'pastMediacalRec':patient.pastMediacalRec,
+            'allergy':patient.allergy,
             'uname':pk
         }
         return render(request,'hospital/mm.html',{'data':data})
