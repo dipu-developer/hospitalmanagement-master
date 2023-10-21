@@ -4,20 +4,13 @@ from datetime import datetime
 
 
 
-departments=[('Cardiologist','Cardiologist'),
-('Dermatologists','Dermatologists'),
-('Emergency Medicine Specialists','Emergency Medicine Specialists'),
-('Allergists/Immunologists','Allergists/Immunologists'),
-('Anesthesiologists','Anesthesiologists'),
-('Colon and Rectal Surgeons','Colon and Rectal Surgeons')
-]
 class Doctor(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
     profile_pic= models.ImageField(upload_to='profile_pic/DoctorProfilePic/',null=True,blank=True)
     address = models.CharField(max_length=40)
     mobile = models.CharField(max_length=20,null=True)
-    department= models.CharField(max_length=50,choices=departments,default='Cardiologist')
     status=models.BooleanField(default=False)
+    hospitalName = models.CharField(max_length=20,null=True)
     @property
     def get_name(self):
         return self.user.first_name+" "+self.user.last_name
@@ -67,8 +60,7 @@ class Patient(models.Model):
     mobile = models.CharField(max_length=20,null=False)
     mobile_nd = models.CharField(max_length=20,null=True)
     email= models.EmailField(null= True)
-    # assignedDoctorId = models.PositiveIntegerField(null=True)
-    aadhar = models.BigIntegerField(null=True,default=000000000000)
+    aadhar = models.IntegerField(null=True,default=000000000000)
 
     admitDate=models.DateField(auto_now=True)
     status=models.BooleanField(default=False)

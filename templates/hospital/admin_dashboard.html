@@ -7,7 +7,7 @@
   <div class="row">
     <div class="panel panel-primary col-md-5" style="margin-left:2%;">
       <div class="panel-heading" style="text-align:center;">
-        <h6 class="panel-title">Recent Doctors</h6>
+        <h6 class="panel-title">Recent Hospital Add</h6>
       </div>
       <table class="table table-hover" id="dev-table">
         <thead>
@@ -22,12 +22,12 @@
         {% for d in doctors %}
         <tr>
           <td> {{d.get_name}}</td>
-          <td>{{d.department}}</td>
+          <td>{{d.hospitalName}}</td>
           <td>{{d.mobile}}</td>
           {%if d.status%}
-          <td> <span class="label label-primary">Permanent</span></td>
+          <td> <span class="label label-success">Approved</span></td>
           {% else %}
-          <td> <span class="label label-success">On Hold</span></td>
+          <td> <span class="label label-primary">On Hold</span></td>
           {% endif %}
 
         </tr>
@@ -43,7 +43,7 @@
         <thead>
           <tr>
             <th>Name</th>
-            <th>Symptoms</th>
+            <th>Aadhar</th>
             <th>Mobile</th>
             <th>Address</th>
             <th>Status</th>
@@ -53,13 +53,13 @@
         {% for p in patients %}
         <tr>
           <td> {{p.get_name}}</td>
-          <td>{{p.symptoms}}</td>
+          <td>{{p.aadhar}}</td>
           <td>{{p.mobile}}</td>
           <td>{{p.address}}</td>
           {%if p.status%}
-          <td> <span class="label label-primary">Admitted</span></td>
+          <td> <span class="label label-success">Approved</span></td>
           {% else %}
-          <td> <span class="label label-success">On Hold</span></td>
+          <td> <span class="label label-primary">Not Approved</span></td>
           {% endif %}
 
         </tr>
@@ -69,10 +69,5 @@
   </div>
 </div>
 
-<!--
-developed By : sumit kumar
-facebook : fb.com/sumit.luv
-youtube : youtube.com/lazycoders
--->
 
 {% endblock content %}

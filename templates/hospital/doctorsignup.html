@@ -58,10 +58,6 @@
   <br>
   <br>
 
-
-
-
-  <!--- signup page for doctor by admin(sumit)  ---------->
   <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div class="container register-form">
@@ -81,6 +77,9 @@
               </div>
               <div class="form-group">
                 {% render_field doctorForm.department class="form-control" placeholder="Department" %}
+              </div>
+              <div class="form-group">
+                {% render_field doctorForm.hospitalName class="form-control" placeholder="Hospital Name" %}
               </div>
               <div class="form-group">
                 {% render_field doctorForm.address class="form-control" placeholder="Address" %}

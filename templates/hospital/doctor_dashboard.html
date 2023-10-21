@@ -1,7 +1,6 @@
 {% extends 'hospital/doctor_base.html' %}
 {% load static %}
 {% block content %}
-{%include 'hospital/doctor_dashboard_cards.html'%}
 <br><br><br><br>
 <div class="container">
   <div class="row">
@@ -27,7 +26,6 @@
           <td>{{a.description}}</td>
           <td>{{p.mobile}}</td>
           <td>{{p.address}}</td>
-          <td>{{a.appointmentDate}}</td>
         </tr>
         {% endfor %}
       </table>
