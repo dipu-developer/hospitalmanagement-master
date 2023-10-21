@@ -60,7 +60,7 @@ class Patient(models.Model):
     mobile = models.CharField(max_length=20,null=False)
     mobile_nd = models.CharField(max_length=20,null=True)
     email= models.EmailField(null= True)
-    aadhar = models.IntegerField(null=True,default=000000000000)
+    aadhar = models.IntegerField(null=True)
 
     admitDate=models.DateField(auto_now=True)
     status=models.BooleanField(default=False)
@@ -91,7 +91,7 @@ class Patient(models.Model):
     def get_id(self):
         return self.user.id
     def __str__(self):
-        return self.user.first_name+" ("+self.symptoms+")"
+        return self.user.first_name
 
 
 class Appointment(models.Model):
