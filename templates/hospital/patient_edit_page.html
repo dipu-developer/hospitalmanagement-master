@@ -54,9 +54,10 @@
 <body>
     
 <div class="container rounded bg-white mt-5 mb-5">
+    <h1>{{mess}}</h1>
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="static/{{MEDIA_URL}}{{data.profile_pic}}"><span class="font-weight-bold" id="url">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
         </div>
         <div class="col-md-9 border-right">
             <div class="p-3 py-5">
@@ -65,10 +66,10 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Name</label>
-                        <h2>{{data.fname}}</h2>
+                        <input type="text" class="form-control" placeholder="first name" name="fname" value="{{data.fname}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold  ">Surname</label>
-                        <h2>{{data.lname}}</h2>
+                        <input type="text" class="form-control" placeholder="first name" name="lname" value="{{data.lname}}">
                     </div>
                 </div>
                 <form method="post" enctype="multipart/form-data">
@@ -81,60 +82,60 @@
                         <input type="text" class="form-control" placeholder="first name" name="mobile_nd" value="{{data.mobile_nd}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 1</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.address}}">
+                        <input type="text" class="form-control" placeholder="first name" name="address" value="{{data.address}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 2</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.address_nd}}">
+                        <input type="text" class="form-control" placeholder="first name" name="address_nd" value="{{data.address_nd}}">
                     </div>
 
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Father Name</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.fatherName}}">
+                        <input type="text" class="form-control" placeholder="first name" name="fatherName" value="{{data.fatherName}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold  font-weight-bold">Mother
                             Name</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.motherName}}">
+                        <input type="text" class="form-control" placeholder="first name" name="motherName" value="{{data.motherName}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Aadhar</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.aadhar}}">
+                        <input type="text" class="form-control" placeholder="first name" name="aadhar" value="{{data.aadhar}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Postcode</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.pincode}}">
+                        <input type="text" class="form-control" placeholder="first name" name="pincode" value="{{data.pincode}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">State</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.state}}">
+                        <input type="text" class="form-control" placeholder="first name" name="state" value="{{data.state}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">City</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.city}}">
+                        <input type="text" class="form-control" placeholder="first name" name="city" value="{{data.city}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Gender</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.gender}}">
+                        <input type="text" class="form-control" placeholder="first name" name="gender" value="{{data.gender}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Date of Birth</label>
-                        <input type="date" class="form-control" placeholder="first name" value="{{data.dob | date:'Y-m-d'}}">
+                        <input type="date" class="form-control" placeholder="first name" name="dob" value="{{data.dob | date:'Y-m-d'}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Language</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.language}}">
+                        <input type="text" class="form-control" placeholder="first name" name="language" value="{{data.language}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Email</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.email}}">
+                        <input type="text" class="form-control" placeholder="first name" name="email" value="{{data.email}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Blood Group</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.bloodGroup}}">
+                        <input type="text" class="form-control" placeholder="first name" name="bloodGroup" value="{{data.bloodGroup}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Symptoms</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.symptoms}}">
+                        <input type="text" class="form-control" placeholder="first name" name="symptoms" value="{{data.symptoms}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Hobby</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.hobby}}">
+                        <input type="text" class="form-control" placeholder="first name" name="hobby" value="{{data.hobby}}">
                     </div>
                     <div class="col-md-6 "><label class="labels font-weight-bold ">Allergy</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.allergy}}">
+                        <input type="text" class="form-control" placeholder="first name" name="allergy" value="{{data.allergy}}">
                     </div>
                     <div class="col-md-12"><label class="labels font-weight-bold ">Past Medical Records</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.pastMediacalRec}}">
+                        <input type="text" class="form-control" placeholder="first name" name="pastMediacalRec" value="{{data.pastMediacalRec}}">
                     </div>
                     <div class="col-md-12"><label class="labels font-weight-bold ">Other</label>
-                        <input type="text" class="form-control" placeholder="first name" value="{{data.other}}">
+                        <input type="text" class="form-control" placeholder="first name" name="other" value="{{data.other}}">
                     </div>
 
                     <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"
@@ -148,6 +149,9 @@
 </div>
 </div>
 </div>
-
+<script>
+    const url_var = document.URL;
+    document.getElementById('')
+</script>
 </body>
 </html>

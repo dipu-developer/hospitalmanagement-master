@@ -118,3 +118,5 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'from@gmail.com' # this email will be used to send emails
 EMAIL_HOST_PASSWORD = 'xyz' 
 EMAIL_RECEIVING_USER = ['to@gmail.com'] # email on which you will receive messages sent from website
+
+

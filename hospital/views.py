@@ -94,6 +94,7 @@ def patient_signup_view(request):
             user.save()
             patient=patientForm.save(commit=False)
             patient.user=user
+            print("user patient user ===============88888888888")
             print(patient.user)
             patient=patient.save()
             my_patient_group = Group.objects.get_or_create(name='PATIENT')
@@ -714,9 +715,7 @@ def user_data_profile(request,pk):
 @user_passes_test(is_patient)
 def patient_dashboard_view(request):
     patient=models.Patient.objects.get(user_id=request.user.id)
-    user=models.User.objects.get(username=request.user)
-    # patient=models.Patient.objects.get(user_id=user.id)
-        
+    user=models.User.objects.get(username=request.user)        
     data={
             'patient':user,
             'fname':user.first_name,
@@ -744,10 +743,24 @@ def patient_dashboard_view(request):
             'allergy':patient.allergy,
             'pastMediacalRec':patient.pastMediacalRec,
             'allergy':patient.allergy,
-            # 'uname':user.username
+            'uname':user
         }
     if request.method=='POST':
+        
+        userForm=forms.PatientUserForm(request.POST,instance=user)
+        patientForm=forms.PatientForm(request.POST,request.FILES,instance=patient)
+        user=models.User.objects.get(username=request.user)
         print("mthid call")
+        # print(patientForm.is_valid())
+        # print(patientForm.errors.as_data())
+        if patientForm.is_valid():
+            patient.user=user
+            print(patient.user)
+            patient=patientForm.save(commit=False)
+            patient.status=True
+            mess="update sucessfully"
+            patient=patient.save()
+            return render(request,'hospital/patient_dashboard.html',{'data':data,'mess':mess})
     return render(request,'hospital/patient_dashboard.html',{'data':data})
     # mydict={
     # 'patient':patient,
