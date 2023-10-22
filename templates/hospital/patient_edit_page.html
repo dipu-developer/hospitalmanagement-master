@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(99, 39, 120)
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #BA68C8
+        }
+        
+        .profile-button {
+            background: rgb(99, 39, 120);
+            box-shadow: none;
+            border: none
+        }
+        
+        .profile-button:hover {
+            background: #682773
+        }
+        
+        .profile-button:focus {
+            background: #682773;
+            box-shadow: none
+        }
+        
+        .profile-button:active {
+            background: #682773;
+            box-shadow: none
+        }
+        
+        .back:hover {
+            color: #682773;
+            cursor: pointer
+        }
+        
+        .labels {
+            font-size: 11px
+        }
+        
+        .add-experience:hover {
+            background: #BA68C8;
+            color: #fff;
+            cursor: pointer;
+            border: solid 1px #BA68C8
+        }
+    </style>
+</head>
+<body>
+    
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+        </div>
+        <div class="col-md-9 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Profile Settings</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Name</label>
+                        <h2>{{data.fname}}</h2>
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold  ">Surname</label>
+                        <h2>{{data.lname}}</h2>
+                    </div>
+                </div>
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                <div class="row mt-3">
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Mobile Number</label>
+                        <input type="text" class="form-control" placeholder="first name" name="mobile" value="{{data.mobile}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Mobile Number 2</label>
+                        <input type="text" class="form-control" placeholder="first name" name="mobile_nd" value="{{data.mobile_nd}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 1</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.address}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 2</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.address_nd}}">
+                    </div>
+
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Father Name</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.fatherName}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold  font-weight-bold">Mother
+                            Name</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.motherName}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Aadhar</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.aadhar}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Postcode</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.pincode}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">State</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.state}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">City</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.city}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Gender</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.gender}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Date of Birth</label>
+                        <input type="date" class="form-control" placeholder="first name" value="{{data.dob | date:'Y-m-d'}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Language</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.language}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Email</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.email}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Blood Group</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.bloodGroup}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Symptoms</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.symptoms}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Hobby</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.hobby}}">
+                    </div>
+                    <div class="col-md-6 "><label class="labels font-weight-bold ">Allergy</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.allergy}}">
+                    </div>
+                    <div class="col-md-12"><label class="labels font-weight-bold ">Past Medical Records</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.pastMediacalRec}}">
+                    </div>
+                    <div class="col-md-12"><label class="labels font-weight-bold ">Other</label>
+                        <input type="text" class="form-control" placeholder="first name" value="{{data.other}}">
+                    </div>
+
+                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit"
+                            onclick="geturl()">Save
+                            Profile</button></div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

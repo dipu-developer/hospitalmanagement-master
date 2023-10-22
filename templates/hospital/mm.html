@@ -43,7 +43,7 @@
             cursor: pointer
         }
 
-        .labels font-weight-bold  {
+        .labels font-weight-bold {
             font-size: 11px
         }
 
@@ -64,8 +64,7 @@
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                         width="150px"
                         src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-                        class="font-weight-bold">Edogaru</span><span
-                        class="text-black-50" id="url"></span><span>
+                        class="font-weight-bold">Edogaru</span><span class="text-black-50" id="url"></span><span>
                     </span></div>
             </div>
             <div class="col-md-9 border-right">
@@ -90,92 +89,94 @@
                         </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 1</label>
                             <p class="fw-medium bg-body-secondary">{{data.address}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Address Line 2</label>
                             <p class="fw-medium bg-body-secondary">{{data.address_nd}}</p>
-                            </div>
-                        
+                        </div>
+
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Father Name</label>
                             <p class="fw-medium bg-body-secondary">{{data.fatherName}}</p>
-                            </div>
-                        <div class="col-md-6 "><label class="labels font-weight-bold  font-weight-bold">Mother Name</label>
+                        </div>
+                        <div class="col-md-6 "><label class="labels font-weight-bold  font-weight-bold">Mother
+                                Name</label>
                             <p class="fw-medium bg-body-secondary">{{data.motherName}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Aadhar</label>
                             <p class="fw-medium bg-body-secondary">{{data.aadhar}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Postcode</label>
                             <p class="fw-medium bg-body-secondary">{{data.pincode}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">State</label>
                             <p class="fw-medium bg-body-secondary">{{data.state}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">City</label>
                             <p class="fw-medium bg-body-secondary">{{data.city}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Gender</label>
                             <p class="fw-medium bg-body-secondary">{{data.gender}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Date of Birth</label>
                             <p class="fw-medium bg-body-secondary">{{data.dob}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Language</label>
                             <p class="fw-medium bg-body-secondary">{{data.language}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Email</label>
                             <p class="fw-medium bg-body-secondary">{{data.email}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Blood Group</label>
                             <p class="fw-medium bg-body-secondary">{{data.bloodGroup}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Symptoms</label>
                             <p class="fw-medium bg-body-secondary">{{data.symptoms}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Hobby</label>
                             <p class="fw-medium bg-body-secondary">{{data.hobby}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-6 "><label class="labels font-weight-bold ">Allergy</label>
                             <p class="fw-medium bg-body-secondary">{{data.allergy}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-12"><label class="labels font-weight-bold ">Past Medical Records</label>
                             <p class="fw-medium bg-body-secondary">{{data.pastMediacalRec}}</p>
-                            </div>
+                        </div>
                         <div class="col-md-12"><label class="labels font-weight-bold ">Other</label>
                             <p class="fw-medium bg-body-secondary">{{data.other}}</p>
-                            </div>
-                       
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onclick="geturl()">Save
-                            Profile</button></div>
+                        </div>
+
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"
+                                onclick="geturl()">Save
+                                Profile</button></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     </div>
-    </div>
-<script>
-    const currentUrl = window.location.href;
-    document.getElementById('url').innerText= currentUrl;
-    function geturl(){
-        var textToCopy = document.getElementById('url').innerHTML;
+    <script>
+        const currentUrl = window.location.href;
+        document.getElementById('url').innerText = currentUrl;
+        function geturl() {
+            var textToCopy = document.getElementById('url').innerHTML;
 
-        // Create a new text area element to hold the text
-        var textArea = document.createElement("textarea");
-        textArea.value = textToCopy;
-        document.body.appendChild(textArea);
+            // Create a new text area element to hold the text
+            var textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
 
-        // Select the text inside the text area
-        textArea.select();
+            // Select the text inside the text area
+            textArea.select();
 
-        // Copy the selected text to the clipboard using the Clipboard API
-        document.execCommand("copy");
+            // Copy the selected text to the clipboard using the Clipboard API
+            document.execCommand("copy");
 
-        // Remove the temporary text area
-        document.body.removeChild(textArea);
+            // Remove the temporary text area
+            document.body.removeChild(textArea);
 
-        // Alert the user that the text has been copied
-        alert("Text has been copied to the clipboard: " + textToCopy);
-    }
-</script>
+            // Alert the user that the text has been copied
+            alert("Text has been copied to the clipboard: " + textToCopy);
+        }
+    </script>
 </body>
 
 </html>

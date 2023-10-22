@@ -714,12 +714,47 @@ def user_data_profile(request,pk):
 @user_passes_test(is_patient)
 def patient_dashboard_view(request):
     patient=models.Patient.objects.get(user_id=request.user.id)
-    mydict={
-    'patient':patient,
-    'symptoms':patient.symptoms,
-    'admitDate':patient.admitDate,
-    }
-    return render(request,'hospital/patient_dashboard.html',context=mydict)
+    user=models.User.objects.get(username=request.user)
+    # patient=models.Patient.objects.get(user_id=user.id)
+        
+    data={
+            'patient':user,
+            'fname':user.first_name,
+            'lname':user.last_name,
+            'mobile':patient.mobile,
+            'profile_pic':patient.profile_pic,
+            'aadhar':patient.aadhar,
+            'address_nd':patient.address_nd,
+            'address':patient.address,
+            'mobile_nd':patient.mobile_nd,
+            'email':patient.email,
+            'aadhar':patient.aadhar,
+            'state':patient.state,
+            'city':patient.city,
+            'pincode':patient.pincode,
+            'bloodGroup':patient.bloodGroup,
+            'dob':patient.dob,
+            'gender':patient.gender,
+            'language':patient.language,
+            'motherName':patient.motherName,
+            'fatherName':patient.fatherName,
+            'symptoms':patient.symptoms,
+            'other':patient.other,
+            'hobby':patient.hobby,
+            'allergy':patient.allergy,
+            'pastMediacalRec':patient.pastMediacalRec,
+            'allergy':patient.allergy,
+            # 'uname':user.username
+        }
+    if request.method=='POST':
+        print("mthid call")
+    return render(request,'hospital/patient_dashboard.html',{'data':data})
+    # mydict={
+    # 'patient':patient,
+    # 'symptoms':patient.symptoms,
+    # 'admitDate':patient.admitDate,
+    # }
+    # return render(request,'hospital/patient_dashboard.html',context=mydict)
 
 
 
