@@ -144,9 +144,21 @@
                         <div class="col-md-12"><label class="labels font-weight-bold ">Other</label>
                             <p class="fw-medium bg-body-secondary">{{data.other}}</p>
                         </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mt-5 text-center"><button class="btn btn-primary profile-button"
+                                        type="button" onclick="geturl()">Copy Link</button></div>
+                            </div>
+                            <div class="col-6"><div class="mt-5">
 
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button"
-                                onclick="geturl()">Copy Link</button></div>
+                                <a class="btn btn-primary profile-button"
+                                    href="whatsapp://send?text=This is WhatsApp sharing example using link"
+                                    data-action="share/whatsapp/share" target="_blank" id="sharelink"> Share to WhatsApp </a>
+                            </div></div>
+                        </div>
+
+                        <br>
+                        
                     </div>
                 </div>
             </div>
@@ -176,6 +188,8 @@
             // Alert the user that the text has been copied
             alert("Text has been copied to the clipboard: " + textToCopy);
         }
+        var sharelink = document.getElementById('sharelink')
+        sharelink.href="whatsapp://send?text=This%20is%20Sahyog%20Seva%20website%0A%0AThe%20profile%20is%20*{{data.fname}}*%20*{{data.lname}}*%20and%20the user%20name%20is%20*{{data.uname}}*%0A%0A"+currentUrl;
     </script>
 </body>
 
