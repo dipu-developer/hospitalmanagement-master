@@ -564,8 +564,11 @@ def doctor_dashboard_view(request):
 @login_required(login_url='doctorlogin')
 @user_passes_test(is_doctor)
 def doctor_patient_view(request):
+    mydict={
+    'doctor':models.Doctor.objects.get(user_id=request.user.id), #for profile picture of doctor in sidebar
+    }
     patients=models.Patient.objects.all().filter(status=True)
-    return render(request,'hospital/aadmin_view_patient.html',{'patients':patients})
+    return render(request,'hospital/aadmin_view_patient.html',{'patients':patients,'mydict':mydict})
 
 
 
